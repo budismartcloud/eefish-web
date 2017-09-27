@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BackendController@index');
+Route::get('/login', 'LoginController@index');
+Route::post('/login/validate', 'LoginController@validateLogin');
