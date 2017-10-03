@@ -9,6 +9,7 @@ namespace App\Http\Controllers\Master;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PenggunaController extends Controller
 {
@@ -44,6 +45,7 @@ class PenggunaController extends Controller
             $data = User::find($id);
         }else{
             $data = new User();
+            $data->user_cities_id = 2;
         }
 
         $data->user_username = $request->input('user_username');
@@ -56,6 +58,13 @@ class PenggunaController extends Controller
         $data->user_email = $request->input('user_email');
 
         /******** Save image ***************/
+        $picture = $request->file('user_picture');
+        if (isset($picture)) {
+            $filename = date("YmdHis"). '-' . $picture->getClientOriginalName();
+            if ($picture->move("public/uploads/pengguna", $filename)) {
+                $data->user_picture = $filename;
+            }
+        }
 
         /**********************************/
 
