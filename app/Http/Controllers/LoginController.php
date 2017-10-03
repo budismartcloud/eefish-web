@@ -36,6 +36,20 @@ class LoginController extends Controller
             return "<div class='alert alert-danger'>Password salah</div>";
         }
         $request->session()->put('activeUser', $activeUser);
-        return redirect('/');
+        return "
+            <div class='alert alert-success'>Login berhasil!</div>
+            <script> scrollToTop(); movePage(); </script>";
+
+    }
+
+    /*
+     * Action untuk proses logout
+     * Created by Budi Santoso
+     *
+     */
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        return redirect('/login');
     }
 }

@@ -12,7 +12,7 @@ class BackendController extends Controller
 {
     public function index(Request $request){
         if ($request->session()->exists('activeUser')) {
-            echo "Exist ".$request->session()->get('activeUser');
+            return view('backend.dashboard.index');
         }else{
             return redirect('login');
         }

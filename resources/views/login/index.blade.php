@@ -48,7 +48,6 @@
                         <input type="password" class="form-control" name="password" placeholder="Password" required="" />
                     </div>
                     <div>
-
                         <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                         <button class="btn btn-success form-control" type="submit">Login</button>
                     </div>
@@ -71,6 +70,12 @@
         var data = getFormData('form-konten');
         ajaxTransfer('{{url('/login/validate')}}', data, '#messages');
     });
+
+
+    function movePage()
+    {
+        redirect(1000, "{{url('/')}}");
+    }
 </script>
 </body>
 </html>

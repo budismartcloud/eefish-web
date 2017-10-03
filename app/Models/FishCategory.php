@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FishCategory extends Model
 {
-    protected $table = 'api_logs';
+    protected $table = 'fish_categories';
     protected $primaryKey = 'id';
     public $timestamps = false;
 }

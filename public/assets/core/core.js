@@ -1,9 +1,3 @@
-/* 
-//////////////////////////// Author /////////////////////////
-Budi S
-*/
-
-
 var active_modal = "";
 var modal_delay = 300;
 var baseURL = "";
@@ -182,7 +176,7 @@ function loadModal(t){
 
 	var modal_box = "";
 	modal_box += "<div aria-hidden='true' aria-labelledby='myModalLabel' role='dialog'  id='modal-target' class='modal fade' style='display: none;'>";
-	modal_box += "<div class='modal-dialog modal-lg'>";
+	modal_box += "<div class='modal-dialog modal-md'>";
 	modal_box += "<div class='modal-content'>";
 	modal_box += "<div class='modal-header'>";
 	modal_box += "<button aria-hidden='true' data-dismiss='modal' class='close' onclick='removeModal(this)' rel='modal-target' type='button'>&#215;</button>";
