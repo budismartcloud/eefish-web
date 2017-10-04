@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/login', 'Api\ApiLoginController@validateLogin');
+Route::post('/register', 'Api\ApiRegisterController@register');

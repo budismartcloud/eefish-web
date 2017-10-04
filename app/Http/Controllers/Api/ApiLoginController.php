@@ -51,6 +51,9 @@ class ApiLoginController extends Controller
             return $this->additionalFunction->returnApiMessage($apiName, 401, "Password not match!", json_encode($sendingParams) );
         }
 
+        $activeUser->user_last_login = date("Y-m-d H:i:s");
+        $activeUser->save();
+
         $data = [
             'id' => $activeUser->id,
             'username' => $activeUser->user_username,
@@ -66,23 +69,13 @@ class ApiLoginController extends Controller
 
         $params = [
             'code' => 302,
-            'description' => 'Login Success!',
+            'description' => 'Found',
+            'message' => 'Login Success!',
             'data' => $data
         ];
 
 
         return response()->json($params);
 
-    }
-
-    /*
-     * Action untuk proses logout
-     * Created by Budi Santoso
-     *
-     */
-    public function logout(Request $request)
-    {
-        $request->session()->flush();
-        return redirect('/login');
     }
 }
