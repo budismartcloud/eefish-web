@@ -12,7 +12,7 @@ class Fish extends Model
 
     public function getCategory()
     {
-        return $this->hasOne('App\Models\FishCategory', 'id', 'fish_fish_category_id');
+        return $this->hasOne('App\Models\FishCategory', 'id', 'fish_fish_categories_id');
     }
 
 }

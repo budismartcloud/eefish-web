@@ -9,7 +9,7 @@ namespace App\Http\Controllers\Master;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Fish;
-use App\FishCategory;
+use App\Models\FishCategory;
 
 class IkanController extends Controller
 {
@@ -51,7 +51,7 @@ class IkanController extends Controller
         }
 
         $data->fish_name = $request->input('fish_name');
-        $data->fish_fish_category_id = $request->input('fish_fish_catgeory_id');
+        $data->fish_fish_categories_id = $request->input('fish_fish_categories_id');
         try{
             $data->save();
             return "
