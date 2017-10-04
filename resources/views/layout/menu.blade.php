@@ -13,7 +13,7 @@
                     <li><a href="{{url('master/periode')}}">Manajemen Periode</a></li>
                     <li><a href="{{url('master/kategori-ikan')}}">Manajemen Kategori Ikan</a></li>
                     <li><a href="{{url('master/ukuran-ikan')}}">Manajemen Ukuran Ikan</a></li>
-                    <li><a href="#">Manajemen Ikan</a></li>
+                    <li><a href="{{url('master/ikan')}}">Manajemen Ikan</a></li>
                     <li><a href="#">Manajemen Kurir</a></li>
                 </ul>
             </li>

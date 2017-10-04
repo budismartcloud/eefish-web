@@ -46,5 +46,12 @@ Route::group(['prefix' => 'master', 'namespace' => 'Master'], function () {
         Route::post('/save', 'UkuranIkanController@save');
         Route::post('/delete', 'UkuranIkanController@delete');
     });
+
+    Route::group(['prefix' => 'ikan', 'middleware' => 'login-verification'], function () {
+        Route::get('/', 'IkanController@index');
+        Route::any('/add', 'IkanController@add');
+        Route::post('/save', 'IkanController@save');
+        Route::post('/delete', 'IkanController@delete');
+    });
 });
 
