@@ -30,8 +30,17 @@ class ApiIkanController extends Controller
 
     public function index()
     {
-        $data = Fish::orderBy('fish_name', 'ASC')->get();
-
+        $fishes = Fish::orderBy('fish_name', 'ASC')->get();
+        $data = [];
+        foreach ($fishes as $num => $item)
+        {
+            $data[] = [
+                'id' => $item->id,
+                'name' => $item->fish_name,
+                'category_id' => $item->fish_fish_categories_id,
+                'category_name' => $item->getCategory->fish_category_name,
+            ];
+        }
         $params = [
             'code' => 302,
             'description' => 'Found',
