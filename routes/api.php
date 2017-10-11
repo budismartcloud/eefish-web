@@ -21,3 +21,4 @@ Route::post('/login', 'Api\ApiLoginController@validateLogin');
 Route::post('/register', 'Api\ApiRegisterController@register');
 Route::get('/fish-category', 'Api\ApiKategoriIkanController@index');
 Route::get('/fish-size-category', 'Api\ApiKategoriUkuranIkanController@index');
+Route::get('/fish', 'Api\ApiIkanController@index');
