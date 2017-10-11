@@ -27,6 +27,17 @@
     <link a href="{{asset('public/assets/core/ajax.css')}}" rel="stylesheet" type="text/css">
     <link a href="{{asset('public/assets/core/style.css')}}" rel="stylesheet" type="text/css">
 
+    <style type="text/css">
+        body {
+            background: #0D3349;
+        }
+
+        .login {
+            background: #0D3349;
+            color: #f0f0f0;
+        }
+    </style>
+
 </head>
 
 <body class="login">
@@ -49,14 +60,14 @@
                     </div>
                     <div>
                         <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                        <button class="btn btn-success form-control" type="submit">Login</button>
+                        <button class="btn btn-success form-control" type="submit" style="color: #0D3349">Login</button>
                     </div>
                     <div class="clearfix"></div>
                     <div class="separator">
                         <div class="clearfix"></div>
                         <br />
                         <div>
-                            <p>©2017 All Rights Reserved. Powered by EEFISH Developer Team</p>
+                            <p>© EEFISH Developer Team 2017</p>
                         </div>
                     </div>
                 </form>

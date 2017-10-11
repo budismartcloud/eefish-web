@@ -37,6 +37,8 @@
                                        class="btn btn-primary btn-xs glyphicon glyphicon-pencil" title="Ubah Data"></a>
                                     <a onclick="deleteData({{$item->id}})" class="btn btn-danger btn-xs glyphicon glyphicon-trash"
                                        title="Hapus Data"></a>
+                                    <a href="{{url('master/ikan/'.$item->id.'/detail')}}" class="btn btn-info btn-xs glyphicon glyphicon-briefcase"
+                                       title="Detail Data"></a>
                                 </td>
                             </tr>
                         @endforeach

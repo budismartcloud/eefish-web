@@ -98,7 +98,9 @@
 
         <!-- page content -->
         <div class="right_col" role="main" id="main-content">
+            <div style="min-height: 768px;">
             @yield('content')
+            </div>
         </div>
         <!-- /page content -->
 

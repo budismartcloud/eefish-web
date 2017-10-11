@@ -37,6 +37,7 @@ class ApiRegisterController extends Controller
         $phoneNumber = $request->input('phone_number');
         $name = $request->input('name');
         $email = $request->input('email');
+        $postCode = $request->input('postcode');
 
         $sendingParams = [
             'username' => $username,
@@ -45,7 +46,8 @@ class ApiRegisterController extends Controller
             'address' => $address,
             'phone_number' => $phoneNumber,
             'name' => $name,
-            'email' => $email
+            'email' => $email,
+            'postcode' => $postCode
         ];
 
         if(is_null($username)){
@@ -81,6 +83,11 @@ class ApiRegisterController extends Controller
             return $this->additionalFunction->returnApiMessage($apiName, 404, "Missing required parameter email!", json_encode($sendingParams) );
         }
 
+        if(is_null($postCode))
+        {
+            return $this->additionalFunction->returnApiMessage($apiName, 404, "Missing required parameter postcode!", json_encode($sendingParams) );
+        }
+
         $activeUser = User::where(['user_username' => $username])->first();
         if(!is_null($activeUser)){
             return $this->additionalFunction->returnApiMessage($apiName, 403, "Username already used!", json_encode($sendingParams) );
@@ -95,6 +102,7 @@ class ApiRegisterController extends Controller
         $data->user_phone_number = $phoneNumber;
         $data->user_full_name = $name;
         $data->user_email = $email;
+        $data->user_post_code = $postCode;
 
         try{
             $data->save();

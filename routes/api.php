@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/login', 'Api\ApiLoginController@validateLogin');
 Route::post('/register', 'Api\ApiRegisterController@register');
+Route::get('/fish-category', 'Api\ApiKategoriIkanController@index');
+Route::get('/fish-size-category', 'Api\ApiKategoriUkuranIkanController@index');

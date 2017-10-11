@@ -31,13 +31,13 @@ class AdditionalFunctionClass
         $messageSystem = $this->getMessage($code);
         if(!is_null($messageSystem)){
             $params = [
-                'status' => $messageSystem->message_system_code,
+                'code' => $messageSystem->message_system_code,
                 'description' => $messageSystem->message_system_description,
                 'message' => $description
             ];
         }else{
             $params = [
-                'status' => 00,
+                'code' => 00,
                 'description' => "Message system unavailable",
                 'message' => $description
             ];

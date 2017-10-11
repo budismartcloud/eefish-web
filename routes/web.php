@@ -52,6 +52,10 @@ Route::group(['prefix' => 'master', 'namespace' => 'Master'], function () {
         Route::any('/add', 'IkanController@add');
         Route::post('/save', 'IkanController@save');
         Route::post('/delete', 'IkanController@delete');
+        Route::get('/{fish}/detail', 'IkanController@detail');
+        Route::any('/{fish}/add-detail', 'IkanController@addDetail');
+        Route::any('/{fish}/save-detail', 'IkanController@saveDetail');
+        Route::any('/{fish}/delete-detail', 'IkanController@deleteDetail');
     });
 });
 
