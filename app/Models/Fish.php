@@ -15,4 +15,9 @@ class Fish extends Model
         return $this->hasOne('App\Models\FishCategory', 'id', 'fish_fish_categories_id');
     }
 
+    public function getItem()
+    {
+        return $this->hasMany('App\Models\FishItem', 'fish_item_fishes_id', 'id');
+    }
+
 }

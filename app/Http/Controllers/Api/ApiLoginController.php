@@ -60,7 +60,7 @@ class ApiLoginController extends Controller
             'identity_number' => $activeUser->user_identity_number,
             'address' => $activeUser->user_address,
             'post_code' => $activeUser->user_post_code,
-            'picture' => 'http://localhost/eefish-web/public/uploads/pengguna'.$activeUser->user_picture,
+            'picture' => 'http://192.168.43.135/eefish-web/public/uploads/pengguna'.$activeUser->user_picture,
             'city_id' => $activeUser->user_cities_id,
             'phone_number' => $activeUser->user_phone_number,
             'name' => $activeUser->user_full_name,
