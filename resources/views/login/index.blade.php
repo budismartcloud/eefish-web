@@ -47,6 +47,9 @@
     <div class="login_wrapper">
         <div class="animate form login_form">
             <section class="login_content">
+
+                <img src="{{asset('public/img/logo.png')}}" width="200" height="200">
+
                 <form action="" method="POST" onsubmit="return false" id="form-konten">
                     <h1>EEFISH Login</h1>
 
